@@ -62,6 +62,30 @@ public class CursoSpringApplication implements CommandLineRunner {
 
 		Categoria cat1 = new Categoria(null, "Puteiro");
 		Categoria cat2 = new Categoria(null, "Biqueira");
+		Categoria cat3 = new Categoria(null, "Tráfico de Armas");
+		Categoria cat4 = new Categoria(null, "Assassino de aluguel");
+		Categoria cat5 = new Categoria(null, "Escravos sexuais");
+		Categoria cat6 = new Categoria(null, "BDSM");
+		Categoria cat7 = new Categoria(null, "Carteira Rosa");
+		Categoria cat8 = new Categoria(null, "Plantação");
+		Categoria cat9 = new Categoria(null, "_\\|/_");
+		Categoria cat10 = new Categoria(null, "Gari");
+		Categoria cat11 = new Categoria(null, "A");
+		Categoria cat12 = new Categoria(null, "Putas feias");
+		Categoria cat13 = new Categoria(null, "Putas lindas");
+		Categoria cat14 = new Categoria(null, "Pó");
+		Categoria cat15 = new Categoria(null, "Raveiros");
+		Categoria cat16 = new Categoria(null, "Servidor publico");
+		Categoria cat17 = new Categoria(null, "Briga de rua");
+		Categoria cat18 = new Categoria(null, "Rinha de galo");
+		Categoria cat19 = new Categoria(null, "Travesti Anao");
+		Categoria cat20 = new Categoria(null, "Tavesti Comum");
+		Categoria cat21 = new Categoria(null, "Travesti");
+		Categoria cat22 = new Categoria(null, "Anjo");
+		Categoria cat23 = new Categoria(null, "Bucetola suja");
+		Categoria cat24 = new Categoria(null, "Gostosas");
+		Categoria cat25 = new Categoria(null, "Charlie Brown");
+		
 
 		Produto p1 = new Produto(null, "Puta", 200.00);
 		Produto p2 = new Produto(null, "Pó", 20.00);
@@ -74,7 +98,8 @@ public class CursoSpringApplication implements CommandLineRunner {
 		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 
-		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8, cat9, cat10,cat11,cat12,
+				cat13,cat14,cat15,cat16,cat17,cat18,cat19,cat20,cat21,cat22,cat23,cat24,cat25));
 		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
 
 		Estado est1 = new Estado(null, "MG");
