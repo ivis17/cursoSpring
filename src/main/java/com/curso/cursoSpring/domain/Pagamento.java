@@ -12,30 +12,33 @@ import javax.persistence.OneToOne;
 
 import com.curso.cursoSpring.domain.enums.EstadoPagamento;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-@Entity @Inheritance(strategy = InheritanceType.JOINED)
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type")
 public abstract class Pagamento implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	private Integer id;
 
 	private Integer estado;
-	
+
 	@JsonIgnore
 	@OneToOne
 	@JoinColumn(name = "pedido_id")
 	@MapsId
 	private Pedido pedido;
-	
+
 	public Pagamento() {
-		
+
 	}
 
 	public Pagamento(Integer id, EstadoPagamento estado, Pedido pedido) {
 		super();
 		this.id = id;
-		this.estado = (estado==null) ? null : estado.getCod();
+		this.estado = (estado == null) ? null : estado.getCod();
 		this.pedido = pedido;
 	}
 
@@ -91,7 +94,5 @@ public abstract class Pagamento implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }
